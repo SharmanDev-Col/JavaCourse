@@ -20,9 +20,9 @@ public class EjercicioEmpleadoDos {
         Empleado empleado1 = new Empleado("Marlon", "1098821998", 2100000, departamento1);
         Empleado empleado2 = new Empleado("Johan", "198832997", 2500000, departamento2);
         Empleado empleado3 = new Empleado("Sebastian", "1999834455", 5000000, departamento3);
-
-        
        
+        
+        
         empleado1.mostrar();
         System.out.println("----------------------------");
         empleado2.mostrar();

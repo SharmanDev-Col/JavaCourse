@@ -15,6 +15,28 @@ public class Empresa {
     private String nombre; 
     private String nit;
     private String ciudad;
+    
+    public Empresa(String nombre, String nit, String ciudad) {
+        
+        if (nombre == null || nombre.trim() .isEmpty()){
+            throw new IllegalArgumentException(
+            "Error, el campo nombre no puede estar vacio");
+        }
+        
+        if (nit == null || nit.trim() .isEmpty()){
+            throw new IllegalArgumentException(
+            "Error, el campo nit no puede estar vacio");
+        }
+        
+        if (ciudad == null || ciudad.trim() .isEmpty()){
+            throw new IllegalArgumentException(
+            "Error, el el campo ciudad no puede estar vacio");
+        }
+        
+        this.nombre = nombre;
+        this.nit = nit;
+        this.ciudad = ciudad;
+    }
 
     public String getNombre() {
         return nombre;
@@ -40,14 +62,7 @@ public class Empresa {
         this.ciudad = ciudad;
     }
     
-    
-    
-    
-    public Empresa(String nombre, String nit, String ciudad) {
-        this.nombre = nombre;
-        this.nit = nit;
-        this.ciudad = ciudad;
-    }
+ 
     
     public void mostrar(){
         System.out.println("nombre : " + getNombre());//renombrar a getNombre
