@@ -20,12 +20,12 @@ public class Empresa {
         
         if (nombre == null || nombre.trim() .isEmpty()){
             throw new IllegalArgumentException(
-            "Error, el campo nombre no puede estar vacio");
+            "Error, el campo nombre de empresa no puede estar vacio");
         }
         
         if (nit == null || nit.trim() .isEmpty()){
             throw new IllegalArgumentException(
-            "Error, el campo nit no puede estar vacio");
+            "Error, el campo nit de empresa no puede estar vacio");
         }
         
         if (ciudad == null || ciudad.trim() .isEmpty()){

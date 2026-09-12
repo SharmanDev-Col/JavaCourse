@@ -17,12 +17,12 @@ public class Departamento {
         
         if (nombre == null || nombre.trim() .isEmpty()){
             throw new IllegalArgumentException(
-            "Error, el campo nombre no puede estar vacio");
+            "Error, el campo nombre de departamento no puede estar vacio");
         }
         
         if (codigo == null || codigo.trim() .isEmpty()){
             throw new IllegalArgumentException(
-            "Error, el campo codigo no puede estar vacio");
+            "Error, el campo codigo de departamento no puede estar vacio");
         }
         
         if (empresa == null){
