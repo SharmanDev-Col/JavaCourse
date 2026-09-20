@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.ejerciciohospital;
 
-/**
- *
- * @author marlo
- */
 public class EjercicioHospital {
 
     public static void main(String[] args) {
@@ -20,58 +12,87 @@ public class EjercicioHospital {
         Paciente paciente3 = null;
         
         try {
-        
             hospital1 = new Hospital("Chicamocha", "Bucaramanga");
-            
         } catch (IllegalArgumentException e) {
-        
-            System.out.println(
-                "Error: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage());
         }
          
         try {
-        
             medico1 = new Medico("Juan", "Neurologo", hospital1);
-            
         } catch (IllegalArgumentException e) {
-        
-            System.out.println(
-                "Error: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage());
         }
         
         try {
-        
             medico2 = new Medico("Antonio", "Psicologo", hospital1);
-            
         } catch (IllegalArgumentException e) {
-        
-            System.out.println(
-                "Error: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage());
         }
         
         try {
-        
             medico3 = new Medico("Andres", "Urologo", hospital1);
-            
         } catch (IllegalArgumentException e) {
-        
-            System.out.println(
-                "Error: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage());
         }
         
-        //agregar medicos al hospital
-        if (hospital1 != null){}
+        // --- AGREGACIÓN: Añadir médicos al hospital ---
+        if (hospital1 != null) {
+            if (medico1 != null) hospital1.agregarMedico(medico1);
+            if (medico2 != null) hospital1.agregarMedico(medico2);
+            if (medico3 != null) hospital1.agregarMedico(medico3);
+            System.out.println("-> Médicos registrados en el hospital exitosamente.\n");
+        }
         
-        Paciente paciente1 = new Paciente("Sebas", 18, "Problema hormonal", medico1);
-        Paciente paciente2 = new Paciente("Johan", 19, "Esquizofrenia", medico2);
-        Paciente paciente3 = new Paciente("Kevin", 24, "Impotencia sexual", medico3);
+        try {
+            paciente1 = new Paciente("Sebas", 18, "Problema hormonal", medico1);
+            
+            // --- AGREGACIÓN: Añadir paciente a la lista del médico ---
+            if (medico1 != null) {
+                medico1.agregarPaciente(paciente1);
+            }
+            
+            paciente1.mostrarPaciente();
+            System.out.println("------------------------------");
+            
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());   
+        }
+        
+        try {
+            paciente2 = new Paciente("Johan", 19, "Esquizofrenia", medico2);
+            
+            // --- AGREGACIÓN: Añadir paciente a la lista del médico ---
+            if (medico2 != null) {
+                medico2.agregarPaciente(paciente2);
+            }
+            
+            paciente2.mostrarPaciente();
+            System.out.println("------------------------------");
+            
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());   
+        }
+        
+        try {
+            paciente3 = new Paciente("Kevin", 24, "Impotencia sexual", medico3);
+            
+            // --- AGREGACIÓN: Añadir paciente a la lista del médico ---
+            if (medico3 != null) {
+                medico3.agregarPaciente(paciente3);
+            }
+            
+            paciente3.mostrarPaciente();
+            System.out.println("------------------------------");
+            
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());   
+        }
+        
+        System.out.println("\n--- LISTA GENERAL DEL HOSPITAL ---");
+        // Verificamos que el hospital exista para evitar errores
+        if (hospital1 != null) { 
+            hospital1.mostrarMedicos();
+        }
     
-    
-        paciente1.mostrarPaciente();
-        System.out.println("------------------------------");
-        paciente2.mostrarPaciente();
-        System.out.println("------------------------------");
-        paciente3.mostrarPaciente();
     }
-   
 }
