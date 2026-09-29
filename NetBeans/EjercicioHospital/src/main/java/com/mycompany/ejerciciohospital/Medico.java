@@ -36,6 +36,13 @@ public class Medico {
         pacientes.add(paciente);
     }
     
+    public void mostrarPacientes(){
+        System.out.println("Pacientes del medico " + nombre + ":");
+        for (Paciente pacientes : pacientes){ // Ciclo for para recorrer la lista[cite: 2]
+            System.out.println("-" + pacientes.getNombre());
+        }
+    } 
+    
     public void mostrar(){
         System.out.println("medico: " + getNombre());
         System.out.println("especialidad " + getEspecialidad());

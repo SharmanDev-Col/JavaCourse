@@ -12,7 +12,6 @@ public class Hospital {
             "Error, el campo nombre de hospital no puede estar vacio");
         }
         
-        // CORRECCIÓN: Aquí decía 'nombre.trim().isEmpty()'
         if (ciudad == null || ciudad.trim().isEmpty()){
             throw new IllegalArgumentException(
             "Error, el campo ciudad del hospital no puede estar vacio");

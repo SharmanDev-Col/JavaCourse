@@ -93,6 +93,20 @@ public class EjercicioHospital {
         if (hospital1 != null) { 
             hospital1.mostrarMedicos();
         }
-    
+        
+        System.out.println("\n--- LISTA DE PACIENTES EN MEDICO 1---");
+        if (medico1 != null) {
+            medico1.mostrarPacientes();
+        }
+        
+        System.out.println("\n--- LISTA DE PACIENTES EN MEDICO 2---");
+        if (medico2 != null) {
+            medico2.mostrarPacientes();
+        }
+        
+        System.out.println("\n--- LISTA DE PACIENTES EN MEDICO 3---");
+        if (medico3 != null) {
+            medico3.mostrarPacientes();
+        }
     }
 }
