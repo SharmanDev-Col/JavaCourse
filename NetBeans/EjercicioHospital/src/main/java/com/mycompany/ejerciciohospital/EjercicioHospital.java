@@ -1,8 +1,10 @@
 package com.mycompany.ejerciciohospital;
+import java.util.Scanner;
 
 public class EjercicioHospital {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         Hospital hospital1 = null;
         Medico medico1 = null;
         Medico medico2 = null;
@@ -12,25 +14,35 @@ public class EjercicioHospital {
         Paciente paciente3 = null;
         
         try {
-            hospital1 = new Hospital("Chicamocha", "Bucaramanga");
+            System.out.println("Ingrese el nombre del hospital:");
+            System.out.println("Ingrese ciudad del hospital:");
+            hospital1 = new Hospital(scanner.nextLine(), scanner.nextLine());
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
+        
+        System.out.println("----------------------------------------------------------");
          
         try {
-            medico1 = new Medico("Juan", "Neurologo", hospital1);
+            System.out.println("Ingrese nombre del medico: ");
+            System.out.println("Ingrese especialidad del medico: ");
+            medico1 = new Medico(scanner.nextLine(), scanner.nextLine(), hospital1);
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
         
         try {
-            medico2 = new Medico("Antonio", "Psicologo", hospital1);
+            System.out.println("Ingrese nombre del medico: ");
+            System.out.println("Ingrese especialidad del medico: ");
+            medico2 = new Medico(scanner.nextLine(), scanner.nextLine(), hospital1);
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
         
         try {
-            medico3 = new Medico("Andres", "Urologo", hospital1);
+            System.out.println("Ingrese nombre del medico: ");
+            System.out.println("Ingrese especialidad del medico: ");
+            medico3 = new Medico(scanner.nextLine(), scanner.nextLine(), hospital1);
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
@@ -40,7 +52,6 @@ public class EjercicioHospital {
             if (medico1 != null) hospital1.agregarMedico(medico1);
             if (medico2 != null) hospital1.agregarMedico(medico2);
             if (medico3 != null) hospital1.agregarMedico(medico3);
-            System.out.println("-> Médicos registrados en el hospital exitosamente.\n");
         }
         
         try {
@@ -74,7 +85,7 @@ public class EjercicioHospital {
         }
         
         try {
-            paciente3 = new Paciente("Kevin", 24, "Impotencia sexual", medico3);
+            paciente3 = new Paciente("Kevin", 24, "Estreñimiento", medico3);
             
             // --- AGREGACIÓN: Añadir paciente a la lista del médico ---
             if (medico3 != null) {
